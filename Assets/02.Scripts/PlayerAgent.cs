@@ -102,7 +102,20 @@ public class PlayerAgent : Agent
         }
 
         tr.Rotate(rot, Time.deltaTime * 100.0f);
-        rb.AddForce(dir * 1.5f, ForceMode.VelocityChange);
+        rb.AddForce(dir * 1.0f, ForceMode.VelocityChange);
+    }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("ball"))
+        {
+            // Ball Touch + Reward
+            AddReward(0.2f);
+
+            // Ball Kick
+            Vector3 kickDir = coll.GetContact(0).point - tr.position;
+            coll.gameObject.GetComponent<Rigidbody>().AddForce(kickDir.normalized * 800.0f);
+        }
     }
 
 }
