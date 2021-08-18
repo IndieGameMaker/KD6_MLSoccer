@@ -14,6 +14,11 @@ public class PlayerAgent : Agent
 
     public TEAM team = TEAM.BLUE;
     public Material[] materials;
+    //Player's Init Position, Rotation
+    private Vector3 initBluePos = new Vector3(-5.5f, 0.5f, 0.0f);
+    private Vector3 initRedPos = new Vector3(5.5f, 0.5f, 0.0f);
+    private Quaternion initBlueRot = Quaternion.Euler(Vector3.up * 90.0f);
+    private Quaternion initRedRot = Quaternion.Euler(-Vector3.up * 90.0f);
 
     private BehaviorParameters bps;
     private Transform tr;
