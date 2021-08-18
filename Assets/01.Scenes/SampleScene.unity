@@ -666,6 +666,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1655764949 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 295136652598734134, guid: aa7f8d4e3e60d4a728ecabe512506f92, type: 3}
+  m_PrefabInstance: {fileID: 790222450}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af25aa10c0d3420e98fe4107e817d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1916856751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,6 +1113,7 @@ GameObject:
   - component: {fileID: 5721988827626278998}
   - component: {fileID: 5683140475607708178}
   - component: {fileID: 5763908423504741348}
+  - component: {fileID: 5708397819436064213}
   m_Layer: 0
   m_Name: Soccer Ball
   m_TagString: ball
@@ -1109,6 +1121,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5708397819436064213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708397819436064212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b84aa5046cd34ff899dba606cc61d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blueScoreText: {fileID: 1187229581}
+  redScoreText: {fileID: 1916856753}
+  players:
+  - {fileID: 7469470667101178893}
+  - {fileID: 1655764949}
 --- !u!1 &5708443952874258090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,6 +2484,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa7f8d4e3e60d4a728ecabe512506f92, type: 3}
+--- !u!114 &7469470667101178893 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 295136652598734134, guid: aa7f8d4e3e60d4a728ecabe512506f92, type: 3}
+  m_PrefabInstance: {fileID: 7183358812455985471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af25aa10c0d3420e98fe4107e817d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7474968068877553648 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 291609300513189583, guid: aa7f8d4e3e60d4a728ecabe512506f92, type: 3}
