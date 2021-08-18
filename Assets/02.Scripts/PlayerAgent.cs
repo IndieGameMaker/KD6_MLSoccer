@@ -75,10 +75,21 @@ public class PlayerAgent : Agent
     public override void OnActionReceived(ActionBuffers actions)
     {
         var action = actions.DiscreteActions;
-        Debug.LogFormat("[0]={0}, [1]={1}, [2]={2}",
-                        action[0],
-                        action[1],
-                        action[2]);
+        // Debug.LogFormat("[0]={0}, [1]={1}, [2]={2}",
+        //                 action[0],
+        //                 action[1],
+        //                 action[2]);
+
+        Vector3 dir = Vector3.zero;
+        Vector3 rot = Vector3.zero;
+
+        switch (action[0])
+        {
+            case 1: dir = tr.forward; break;
+            case 2: dir = -tr.forward; break;
+        }
+
+
     }
 
 }
