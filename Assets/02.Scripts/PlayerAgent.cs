@@ -57,6 +57,19 @@ public class PlayerAgent : Agent
         */
 
         var actions = actionsOut.DiscreteActions;
+        actions.Clear();
+
+        // Branch 0 전진/후진
+        if (Input.GetKey(KeyCode.W)) actions[0] = 1;
+        if (Input.GetKey(KeyCode.S)) actions[0] = 2;
+
+        // Branch 1 좌/우 이동
+        if (Input.GetKey(KeyCode.Q)) actions[1] = 1;
+        if (Input.GetKey(KeyCode.E)) actions[1] = 2;
+
+        // Branch 2 좌/우 회전
+        if (Input.GetKey(KeyCode.A)) actions[2] = 1;
+        if (Input.GetKey(KeyCode.D)) actions[2] = 2;
     }
 
 }
