@@ -26,6 +26,7 @@ public class PlayerAgent : Agent
         rb = GetComponent<Rigidbody>();
 
         bps.TeamId = (int)team;
+        GetComponent<Renderer>().material = materials[bps.TeamId];
     }
 
 }
