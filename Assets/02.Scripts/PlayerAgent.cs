@@ -13,6 +13,7 @@ public class PlayerAgent : Agent
     }
 
     public TEAM team = TEAM.BLUE;
+    public Material[] materials;
 
     private BehaviorParameters bps;
     private Transform tr;
