@@ -89,7 +89,20 @@ public class PlayerAgent : Agent
             case 2: dir = -tr.forward; break;
         }
 
+        switch (action[1])
+        {
+            case 1: dir = -tr.right; break;
+            case 2: dir = tr.right; break;
+        }
 
+        switch (action[2])
+        {
+            case 1: rot = -tr.up; break;
+            case 2: rot = tr.up; break;
+        }
+
+        tr.Rotate(rot, Time.deltaTime * 100.0f);
+        rb.AddForce(dir * 1.5f, ForceMode.VelocityChange);
     }
 
 }
