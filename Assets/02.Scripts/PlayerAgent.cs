@@ -24,6 +24,12 @@ public class PlayerAgent : Agent
     private Transform tr;
     private Rigidbody rb;
 
+    void InitPlayer()
+    {
+        tr.localPosition = (team == TEAM.BLUE) ? initBluePos : initRedPos;
+        tr.localRotation = (team == TEAM.BLUE) ? initBlueRot : initRedRot;
+    }
+
     public override void Initialize()
     {
         bps = GetComponent<BehaviorParameters>();
@@ -33,5 +39,11 @@ public class PlayerAgent : Agent
         bps.TeamId = (int)team;
         GetComponent<Renderer>().material = materials[bps.TeamId];
     }
+
+    public override void OnEpisodeBegin()
+    {
+        InitPlayer();
+    }
+
 
 }
