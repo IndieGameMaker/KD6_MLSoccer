@@ -32,6 +32,8 @@ public class PlayerAgent : Agent
 
     public override void Initialize()
     {
+        MaxStep = 10000;
+
         bps = GetComponent<BehaviorParameters>();
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
@@ -43,7 +45,18 @@ public class PlayerAgent : Agent
     public override void OnEpisodeBegin()
     {
         InitPlayer();
+        rb.velocity = rb.angularVelocity = Vector3.zero;
     }
 
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        /*
+            전후이동 : 정지, 전진, 후진  (0, 1, 2)  (Non, W, S)
+            좌우이동 : 정지, 왼쪽, 오른쪽 (0, 1, 2)  (Non, Q, E)
+            좌우회전 : 정지, 왼쪽, 오른쪽 (0, 1, 2)  (Non, A, D)
+        */
+
+        var actions = actionsOut.DiscreteActions;
+    }
 
 }
