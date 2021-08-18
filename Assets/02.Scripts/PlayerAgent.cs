@@ -72,4 +72,13 @@ public class PlayerAgent : Agent
         if (Input.GetKey(KeyCode.D)) actions[2] = 2;
     }
 
+    public override void OnActionReceived(ActionBuffers actions)
+    {
+        var action = actions.DiscreteActions;
+        Debug.LogFormat("[0]={0}, [1]={1}, [2]={2}",
+                        action[0],
+                        action[1],
+                        action[2]);
+    }
+
 }
