@@ -19,7 +19,28 @@ public class BallCtrl : MonoBehaviour
 
     void InitBall()
     {
+        // 물리력을 초기화
         rb.velocity = rb.angularVelocity = Vector3.zero;
+        // 축구공의 위치를 초기화
         transform.localPosition = new Vector3(0.0f, 1.5f, 0.0f);
+    }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        // Blue 골대에 들어갔을 경우
+        // Red Team +1 Reward
+        // Blue Team -1 Reward
+        // EndEpisode
+
+        if (coll.collider.CompareTag("BLUE_GOAL"))
+        {
+
+        }
+
+        // Red 골대에 들어갔을 경우
+        // Blue Team +1 Reward
+        // Red Team -1 Reward
+        // EndEpisode
+
     }
 }
