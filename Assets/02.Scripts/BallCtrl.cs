@@ -42,12 +42,26 @@ public class BallCtrl : MonoBehaviour
             players[1].EndEpisode();
             // 볼 위치 초기화
             InitBall();
+            // 점수 기록
+            redScoreText.text = (++redScore).ToString();
         }
 
         // Red 골대에 들어갔을 경우
         // Blue Team +1 Reward
         // Red Team -1 Reward
         // EndEpisode
-
+        if (coll.collider.CompareTag("RED_GOAL"))
+        {
+            // 리워드 적용
+            players[1].AddReward(-1.0f);
+            players[0].AddReward(+1.0f);
+            // 학습을 종료
+            players[0].EndEpisode();
+            players[1].EndEpisode();
+            // 볼 위치 초기화
+            InitBall();
+            // 점수 기록
+            blueScoreText.text = (++blueScore).ToString();
+        }
     }
 }
